@@ -4,6 +4,21 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import {
+  heroImage,
+  traditionImage1,
+  traditionImage2,
+  traditionImage3,
+  comingSoonImage1,
+  comingSoonImage2,
+  comingSoonImage3,
+  jointMovementImage1,
+  jointMovementImage2,
+  gridImage1,
+  gridImage2,
+  gridImage3,
+  gridImage4
+} from '@/components/page_Images'
 
 // Animation variants
 const fadeInUp = {
@@ -71,17 +86,17 @@ export default function MainContent() {
   const traditionData=[{
     title:"Sport & Swagger",
     des:"Function first, fashion-always.",
-    img:"/assets/tradition-image1.jpg"
+    img:traditionImage1
   },
   {
     title:"Culture in Motion",
     des:"Rewriting culture through rhythm, rebellion and raw expression.",
-    img:"/assets/tradition-image2.jpg"
+    img:traditionImage2
   },
   {
     title:"Live in Motion",
     des:"Made to move in all the ways that feel like you.",
-    img:"/assets/tradition-image3.jpg"
+    img:traditionImage3
   }
   ]
 
@@ -90,19 +105,19 @@ export default function MainContent() {
       title: "Run Club Meetup ",
       time: "Jun 25, 10 am",
       des:"Join local runners for a 5K, gear trials, and post-run smoothies.",
-      img: "/assets/coming-soon1.png"
+      img:comingSoonImage1
     },
     {
       title: "Custom Kicks Day ",
       time: "Jun 26, 6 PM",
       des:"Design your pair. Add your name. Walk out with a one-of-one.",
-      img: "/assets/coming-soon2.png"
+      img:comingSoonImage2
     },
     {
       title: "Football Weekend ",
       time: "Jun 28-29, 11 am ",
       des:"Join us for skill challenges, mini matches, & the launch of our latest turf-ready kicks.",
-      img: "/assets/coming-soon3.png"
+      img:comingSoonImage3
     }
   ]
 
@@ -125,7 +140,7 @@ export default function MainContent() {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image 
-            src="/assets/main-hero-image.webp" 
+            src={heroImage} 
             alt="Main Content" 
             width={1920}
             height={700}
@@ -190,15 +205,21 @@ export default function MainContent() {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.img 
-                src={item.img} 
-                alt={item.title} 
-                className='mb-4 w-[410px] h-[450px] object-cover clip-triangle'
+              <motion.div 
+                className='mb-4 w-[410px] h-[450px] overflow-hidden clip-triangle'
                 whileHover={{ 
                   scale: 1.1,
                   transition: { duration: 0.4 }
                 }}
-              />
+              >
+                <Image 
+                  src={item.img} 
+                  alt={item.title} 
+                  width={410}
+                  height={450}
+                  className='w-full h-full object-cover'
+                />
+              </motion.div>
               <p className='text-[28px] font-[700] '>{item.title}</p>
               <p className='text-[18px] font-[400] px-8'>{item.des}</p>
             </motion.div>
@@ -235,24 +256,38 @@ export default function MainContent() {
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
             >
-              <motion.img 
-                src='/assets/grid1.jpg' 
-                className='w-full h-full object-cover'
+              <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.4 }}
-              />
+                className='w-full h-full'
+              >
+                <Image 
+                  src={gridImage1} 
+                  alt="Grid Image 1"
+                  width={300}
+                  height={200}
+                  className='w-full h-full object-cover'
+                />
+              </motion.div>
             </motion.div>
             <motion.div 
               className="w-[65%] overflow-hidden"
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
             >
-              <motion.img 
-                src='/assets/grid2.jpg' 
-                className='w-full h-full object-cover'
+              <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.4 }}
-              />
+                className='w-full h-full'
+              >
+                <Image 
+                  src={gridImage2}
+                  alt="Grid Image 2"
+                  width={500}
+                  height={200}
+                  className='w-full h-full object-cover'
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
           <motion.div 
@@ -264,24 +299,38 @@ export default function MainContent() {
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
             >
-              <motion.img 
-                src='/assets/grid3.jpg' 
-                className='w-full h-full object-cover'
+              <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.4 }}
-              />
+                className='w-full h-full'
+              >
+                <Image 
+                  src={gridImage3}
+                  alt="Grid Image 3"
+                  width={500}
+                  height={200}
+                  className='w-full h-full object-cover'
+                />
+              </motion.div>
             </motion.div>
             <motion.div 
               className=" w-[35%] overflow-hidden"
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
             >
-              <motion.img 
-                src='/assets/grid4.jpg' 
-                className='w-full h-full object-cover'
+              <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.4 }}
-              />
+                className='w-full h-full'
+              >
+                <Image 
+                  src={gridImage4}
+                  alt="Grid Image 4"
+                  width={300}
+                  height={200}
+                  className='w-full h-full object-cover'
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -371,7 +420,7 @@ export default function MainContent() {
               transition={{ duration: 0.4 }}
             >
               <Image
-                src="/assets/join-movement1.png"
+                src={jointMovementImage1}
                 alt="Join the Movement"
                 fill
                 className='w-full h-full object-cover object-top'
@@ -400,7 +449,7 @@ export default function MainContent() {
               transition={{ duration: 0.4 }}
             >
               <Image
-                src="/assets/join-movement2.png"
+                src={jointMovementImage2}
                 alt="Join the Movement"
                 width={550}
                 height={300}
