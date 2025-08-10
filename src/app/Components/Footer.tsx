@@ -9,7 +9,15 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row justify-between items-center gap-12'>
           {/* Left Section - Logo */}
           <div className='flex-shrink-0'>
-            <Image src='/footer_logo.svg' alt='Agilitas Logo' width={180} height={180} className='h-[180px] w-auto' />
+            <Image 
+              src='/footer_logo.svg' 
+              alt='Agilitas Logo' 
+              width={180} 
+              height={180} 
+              className='h-[180px] w-auto'
+              loading="lazy"
+              quality={90}
+            />
           </div>
 
           {/* Middle Section - Navigation Links */}
@@ -68,15 +76,15 @@ export default function Footer() {
               <div className='flex items-center gap-3'>
                 <a href='https://linkedin.com' target='_blank' rel='noopener noreferrer' 
                    className='w-8 h-8  flex items-center justify-center hover:cursor-pointer'>
-                  <Image src='/linkedin.svg' alt='LinkedIn' width={24} height={24} className='w-6 h-6' />
+                  <Image src='/linkedin.svg' alt='LinkedIn' width={24} height={24} className='w-6 h-6' loading="lazy" />
                 </a>
                 <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'
                    className='w-8 h-8 flex items-center justify-center hover:cursor-pointer'>
-                  <Image src='/instagram.svg' alt='Instagram' width={24} height={24} className='w-6 h-6' />
+                  <Image src='/instagram.svg' alt='Instagram' width={24} height={24} className='w-6 h-6' loading="lazy" />
                 </a>
                 <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'
                    className='w-8 h-8  flex items-center justify-center  transition-colors'>
-                  <Image src='/youtube.svg' alt='YouTube' width={24} height={24} className='w-6 h-6' />
+                  <Image src='/youtube.svg' alt='YouTube' width={24} height={24} className='w-6 h-6' loading="lazy" />
                 </a>
               </div>
             </div>

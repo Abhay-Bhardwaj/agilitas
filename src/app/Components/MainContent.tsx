@@ -119,14 +119,22 @@ export default function MainContent() {
         className='relative mb-40'
         variants={fadeInUp}
       >
-        <motion.img 
-          src="/assets/main-hero-image.png" 
-          alt="Main Content" 
-          className="w-full max-w-full h-[700px] object-cover object-[5%_20%]"
+        <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-        />
+        >
+          <Image 
+            src="/assets/main-hero-image.png" 
+            alt="Main Content" 
+            width={1920}
+            height={700}
+            className="w-full max-w-full h-[700px] object-cover object-[5%_20%]"
+            priority={true}
+            quality={90}
+            unoptimized={true}
+          />
+        </motion.div>
         <motion.p 
           className='absolute bottom-[150px] right-0 pr-10 text-right text-[#F5F5F5] text-[32px] md:font-bold md:text-[64px] text-shadow-[0_4px_4px_rgba(0,0,0,0.5)]'
           initial={{ opacity: 0, x: 100 }}
@@ -298,7 +306,17 @@ export default function MainContent() {
             <CarouselContent>
               {comingSoonData?.map((item, index) => (
               <CarouselItem key={index} className='relative mr-[-72px] basis-[540px]'>
-                <Image src={item.img} alt={item.title} width={520} height={400} className='mb-4 w-[520px] h-full object-cover object-left clip-triangle2' />
+                <Image 
+                  src={item.img} 
+                  alt={item.title} 
+                  width={520} 
+                  height={400} 
+                  className='mb-4 w-[520px] h-full object-cover object-left clip-triangle2' 
+                  loading="lazy"
+                  quality={85}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2kjRaXvjSDCWgkj5cj/9k="
+                />
                 <div className='absolute left-20 bottom-[10px] w-full p-4 pr-24 text-left text-shadow-[1px_1px_10px_rgba(0,0,0,1)]'>
                   <p className='text-[28px] font-[500] '>{item.title}</p>
                   <p className='text-[28px] font-[500] '>{item.time}</p>
@@ -309,7 +327,8 @@ export default function MainContent() {
             </CarouselContent>
             </Carousel>
           </motion.div>
-      </motion.div>      {/* join the Movement Section */}
+      </motion.div>      
+      {/* join the Movement Section */}
       <motion.div 
         className='p-8'
         initial="hidden"
@@ -347,13 +366,21 @@ export default function MainContent() {
               transition: { duration: 0.3 }
             }}
           >
-            <motion.img
-              src="/assets/join-movement1.png"
-              alt="Join the Movement"
-              className='w-full h-full object-cover object-top'
+            <motion.div
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.4 }}
-            />
+            >
+              <Image
+                src="/assets/join-movement1.png"
+                alt="Join the Movement"
+                fill
+                className='w-full h-full object-cover object-top'
+                loading="lazy"
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2kjRaXvjSDCWgkj5cj/9k="
+              />
+            </motion.div>
             <p className='absolute inset-0 flex items-center justify-center text-white underline text-center px-4 drop-shadow-[0_6px_20px_rgba(0,0,0,1)]'>
               DISCOVER WHERE YOU FIT IN
             </p>
@@ -361,20 +388,29 @@ export default function MainContent() {
 
           {/* Second Box */}
           <motion.div 
-            className='relative w-[90vw] max-w-[550px] aspect-[550/300] overflow-hidden clip-triangle md:ml-[-25px]'
+            className='relative w-[90vw] max-w-[550px] aspect-[550/360] overflow-hidden clip-triangle md:ml-[-25px]'
             variants={fadeInRight}
             whileHover={{ 
               scale: 1.05,
               transition: { duration: 0.3 }
             }}
           >
-            <motion.img
-              src="/assets/join-movement2.png"
-              alt="Join the Movement"
-              className='w-full h-full object-cover object-top'
+            <motion.div
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.4 }}
-            />
+            >
+              <Image
+                src="/assets/join-movement2.png"
+                alt="Join the Movement"
+                width={550}
+                height={300}
+                className='w-full h-full object-cover object-top'
+                loading="lazy"
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2kjRaXvjSDCWgkj5cj/9k="
+              />
+            </motion.div>
             <p className='absolute inset-0 flex items-center justify-center text-white underline text-center px-4 drop-shadow-[0_6px_20px_rgba(0,0,0,1)]'>
               VIBE WITH CREATORS WHO GET IT
             </p>
