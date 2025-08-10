@@ -125,7 +125,7 @@ export default function MainContent() {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image 
-            src="/assets/main-hero-image.png" 
+            src="/assets/main-hero-image.webp" 
             alt="Main Content" 
             width={1920}
             height={700}
@@ -171,7 +171,7 @@ export default function MainContent() {
       >
         <motion.div variants={fadeInUp}>
           <p className='text-[36px] font-[600] '>Tradition in Transition</p>
-          <p className='p-[400] text-[18px]'>Reimagining a legacy fit to move with you</p>
+          <p className='font-[400] text-[18px]'>Reimagining a legacy fit to move with you</p>
         </motion.div>
         <motion.div 
           className='flex flex-col md:flex-row md:gap-0 justify-center mt-8 gap-8'
