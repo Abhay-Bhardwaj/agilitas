@@ -1,16 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Footer() {
-
-  const pagesList = [
-    { name: 'About Us', link: '/about' },
-    { name: 'What we do', link: '/what-we-do' },
-    { name: 'Inside Agilitas', link: '/inside-agilitas' },
-    { name: 'Join the Team', link: '/join-the-team' },
-    { name: 'Media', link: '/media' },
-    { name: 'Blogs (Coming Soon)', link: '/blogs' },
-  ]
-
   return (
     <div className='flex flex-col'>
       {/* Main Footer */}
@@ -18,7 +9,7 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row justify-between items-center gap-12'>
           {/* Left Section - Logo */}
           <div className='flex-shrink-0'>
-            <img src='/footer_logo.svg' alt='Agilitas Logo' className='h-[180px] w-auto' />
+            <Image src='/footer_logo.svg' alt='Agilitas Logo' width={180} height={180} className='h-[180px] w-auto' />
           </div>
 
           {/* Middle Section - Navigation Links */}
@@ -77,15 +68,15 @@ export default function Footer() {
               <div className='flex items-center gap-3'>
                 <a href='https://linkedin.com' target='_blank' rel='noopener noreferrer' 
                    className='w-8 h-8  flex items-center justify-center hover:cursor-pointer'>
-                  <img src='/linkedin.svg' alt='LinkedIn' className='w-6 h-6' />
+                  <Image src='/linkedin.svg' alt='LinkedIn' width={24} height={24} className='w-6 h-6' />
                 </a>
                 <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'
                    className='w-8 h-8 flex items-center justify-center hover:cursor-pointer'>
-                  <img src='/instagram.svg' alt='Instagram' className='w-6 h-6' />
+                  <Image src='/instagram.svg' alt='Instagram' width={24} height={24} className='w-6 h-6' />
                 </a>
                 <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'
                    className='w-8 h-8  flex items-center justify-center  transition-colors'>
-                  <img src='/youtube.svg' alt='YouTube' className='w-6 h-6' />
+                  <Image src='/youtube.svg' alt='YouTube' width={24} height={24} className='w-6 h-6' />
                 </a>
               </div>
             </div>

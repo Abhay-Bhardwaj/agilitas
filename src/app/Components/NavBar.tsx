@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 // Animation variants
 const navbarVariants = {
@@ -9,7 +10,7 @@ const navbarVariants = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.6 }
   }
 }
 
@@ -18,7 +19,7 @@ const logoVariants = {
   visible: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.6, delay: 0.2, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.6, delay: 0.2 }
   }
 }
 
@@ -27,7 +28,7 @@ const menuVariants = {
   visible: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.6, delay: 0.3, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.6, delay: 0.3 }
   }
 }
 
@@ -36,12 +37,12 @@ const mobileMenuVariants = {
   visible: { 
     opacity: 1, 
     height: 'auto',
-    transition: { duration: 0.4, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.4 }
   },
   exit: { 
     opacity: 0, 
     height: 0,
-    transition: { duration: 0.3, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.3 }
   }
 }
 
@@ -98,9 +99,11 @@ export default function NavBar() {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <img 
+          <Image 
             src="/assets/logo.png" 
             alt="Agilitas Logo" 
+            width={120}
+            height={40}
             className="h-8 md:h-10 w-auto object-contain"
           />
         </motion.div>

@@ -3,6 +3,7 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 // Animation variants
 const fadeInUp = {
@@ -10,7 +11,7 @@ const fadeInUp = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.8 }
   }
 }
 
@@ -19,7 +20,7 @@ const fadeInRight = {
   visible: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.8 }
   }
 }
 
@@ -28,7 +29,7 @@ const fadeInLeft = {
   visible: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.8 }
   }
 }
 
@@ -46,7 +47,7 @@ const scaleIn = {
   visible: { 
     opacity: 1, 
     scale: 1,
-    transition: { duration: 0.6, ease: [0.25, 0.25, 0.25, 0.75] as any }
+    transition: { duration: 0.6 }
   }
 }
 
@@ -297,7 +298,7 @@ export default function MainContent() {
             <CarouselContent>
               {comingSoonData?.map((item, index) => (
               <CarouselItem key={index} className='relative mr-[-72px] basis-[540px]'>
-                <img src={item.img} alt={item.title} className='mb-4 w-[520px] h-full object-cover object-left clip-triangle2' />
+                <Image src={item.img} alt={item.title} width={520} height={400} className='mb-4 w-[520px] h-full object-cover object-left clip-triangle2' />
                 <div className='absolute left-20 bottom-[10px] w-full p-4 pr-24 text-left text-shadow-[1px_1px_10px_rgba(0,0,0,1)]'>
                   <p className='text-[28px] font-[500] '>{item.title}</p>
                   <p className='text-[28px] font-[500] '>{item.time}</p>
