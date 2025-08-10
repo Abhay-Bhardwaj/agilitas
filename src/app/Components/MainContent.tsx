@@ -189,7 +189,7 @@ export default function MainContent() {
           <p className='font-[400] text-[18px]'>Reimagining a legacy fit to move with you</p>
         </motion.div>
         <motion.div 
-          className='flex flex-col md:flex-row md:gap-0 justify-center mt-8 gap-8'
+          className='flex flex-col mx-8 md:mx-0 md:flex-row md:gap-0 justify-center mt-8 gap-8'
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -206,7 +206,7 @@ export default function MainContent() {
               }}
             >
               <motion.div 
-                className='mb-4 w-[410px] h-[450px] overflow-hidden clip-triangle'
+                className='mb-4 w-[90vw] max-w-[410px] h-[450px] overflow-hidden clip-triangle'
                 whileHover={{ 
                   scale: 1.1,
                   transition: { duration: 0.4 }
@@ -354,7 +354,7 @@ export default function MainContent() {
             <Carousel opts={{ align: "start" }} className='mt-8'>
             <CarouselContent>
               {comingSoonData?.map((item, index) => (
-              <CarouselItem key={index} className='relative mr-[-72px] basis-[540px]'>
+              <CarouselItem key={index} className='relative mr-[-72px]  basis-[540px]'>
                 <Image 
                   src={item.img} 
                   alt={item.title} 
