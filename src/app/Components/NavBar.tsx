@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import logo from '@/assets/logo.png'
 
 // Animation variants
 const navbarVariants = {
@@ -100,7 +101,7 @@ export default function NavBar() {
           transition={{ duration: 0.2 }}
         >
           <Image 
-            src="/assets/logo.png" 
+            src={logo} 
             alt="Agilitas Logo" 
             width={120}
             height={40}
