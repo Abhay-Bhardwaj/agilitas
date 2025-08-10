@@ -29,10 +29,6 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   // Remove deprecated poweredByHeader (it's false by default in newer versions)
   poweredByHeader: false,
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
 };
 
 export default nextConfig;
