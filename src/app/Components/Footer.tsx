@@ -16,6 +16,7 @@ export default function Footer() {
               height={180} 
               className='h-[180px] w-auto'
               loading="lazy"
+              
               quality={90}
             />
           </div>
