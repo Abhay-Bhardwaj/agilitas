@@ -153,7 +153,7 @@ export default function NavBar() {
         >
           <motion.button
             onClick={toggleMenu}
-            className="flex flex-col justify-center items-center w-8 h-8 relative"
+            className="flex flex-col justify-center items-end w-8 h-8 relative"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -166,12 +166,12 @@ export default function NavBar() {
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="w-6 h-0.5 bg-white"
+              className="w-4 h-0.5 bg-white"
               animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="w-6 h-0.5 bg-white absolute"
+              className={`${isMenuOpen ? 'w-6' : 'w-2'} h-0.5 bg-white absolute`}
               animate={isMenuOpen ? 
                 { rotate: -45, y: 0 } : 
                 { rotate: 0, y: 6 }
